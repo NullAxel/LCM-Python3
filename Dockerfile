@@ -1,5 +1,4 @@
 FROM ubuntu
-RUN apt-get update
-RUN apt-get install -y ttyd
+RUN wget https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.${TARGETARCH} -O /bin/ttyd
 CMD ["ttyd" "-W" "bash"]
 EXPOSE 7681
